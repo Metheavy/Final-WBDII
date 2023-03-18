@@ -2,25 +2,7 @@
     include ("../configuration.php");
     include ("../libraries/db.php");
     
-    if(isset($_GET['action']))
-    {
-        $a = $_GET['action'];
-        switch($a)
-        {
-            case "0":
-                $ssid = $_GET['ssid'];
-                $active = $_GET['active'];
-
-                // $result = dbUpdate("tbl_slidshow" . "active" . "ssid = $active");
-                
-                // dbUpdate($table, $data=array(), $criteria="");
-                // $fv = substr($fv, 0, strlen($fv)-1);
-                // $sql = "Update " . $tbl_slideshow ." set " . $active . " Where ssid=" .$acitve;
-                // $result = mysqli_query($conn,$sql);
-            break;
-        }
-    }
-    // $result = dbSelect($table, $column="*", $criteria="", $clause="");
+    
     $result = dbSelect("tbl_slideshow", "*", "", "order by ordernum");
     $num = mysqli_num_rows($result);
 ?>
